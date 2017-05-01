@@ -1,0 +1,270 @@
+Problem 1
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 31
+
+Algorithm 1 Problem 1
+Denoms used: 1, 0, 1, 0, 1, 0, 0
+Num coins used: 3
+ChangeSlow Time: 1.5267750025
+
+Problem 2
+Coins: 1, 5, 10, 25, 50
+Change To Make: 31
+
+Algorithm 1 Problem 2
+Denoms used: 1, 1, 0, 1, 0
+Num coins used: 3
+ChangeSlow Time: 0.0160559993
+
+Problem 3
+Coins: 1, 6, 13, 37, 150
+Change To Make: 31
+
+Algorithm 1 Problem 3
+Denoms used: 0, 3, 1, 0, 0
+Num coins used: 4
+ChangeSlow Time: 0.0110449996
+
+Problem 4
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 32
+
+Algorithm 1 Problem 4
+Denoms used: 0, 1, 1, 0, 1, 0, 0
+Num coins used: 3
+ChangeSlow Time: 2.4170820713
+
+Problem 5
+Coins: 1, 5, 10, 25, 50
+Change To Make: 32
+
+Algorithm 1 Problem 5
+Denoms used: 2, 1, 0, 1, 0
+Num coins used: 4
+ChangeSlow Time: 0.0165630002
+
+Problem 6
+Coins: 1, 6, 13, 37, 150
+Change To Make: 32
+
+Algorithm 1 Problem 6
+Denoms used: 0, 1, 2, 0, 0
+Num coins used: 3
+ChangeSlow Time: 0.0104120001
+
+Problem 7
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 33
+
+Algorithm 1 Problem 7
+Denoms used: 1, 1, 1, 0, 1, 0, 0
+Num coins used: 4
+ChangeSlow Time: 4.5651807785
+
+Problem 8
+Coins: 1, 5, 10, 25, 50
+Change To Make: 33
+
+Algorithm 1 Problem 8
+Denoms used: 3, 1, 0, 1, 0
+Num coins used: 5
+ChangeSlow Time: 0.0234510005
+
+Problem 9
+Coins: 1, 6, 13, 37, 150
+Change To Make: 33
+
+Algorithm 1 Problem 9
+Denoms used: 1, 1, 2, 0, 0
+Num coins used: 4
+ChangeSlow Time: 0.0110040000
+
+Problem 10
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 34
+
+Algorithm 1 Problem 10
+Denoms used: 0, 2, 1, 0, 1, 0, 0
+Num coins used: 4
+ChangeSlow Time: 7.2133569717
+
+Problem 11
+Coins: 1, 5, 10, 25, 50
+Change To Make: 34
+
+Algorithm 1 Problem 11
+Denoms used: 4, 1, 0, 1, 0
+Num coins used: 6
+ChangeSlow Time: 0.0383290015
+
+Problem 12
+Coins: 1, 6, 13, 37, 150
+Change To Make: 34
+
+Algorithm 1 Problem 12
+Denoms used: 2, 1, 2, 0, 0
+Num coins used: 5
+ChangeSlow Time: 0.0238019992
+
+Problem 13
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 35
+
+Algorithm 1 Problem 13
+Denoms used: 1, 2, 1, 0, 1, 0, 0
+Num coins used: 5
+ChangeSlow Time: 11.7285747528
+
+Problem 14
+Coins: 1, 5, 10, 25, 50
+Change To Make: 35
+
+Algorithm 1 Problem 14
+Denoms used: 0, 0, 1, 1, 0
+Num coins used: 2
+ChangeSlow Time: 0.0324789993
+
+Problem 15
+Coins: 1, 6, 13, 37, 150
+Change To Make: 35
+
+Algorithm 1 Problem 15
+Denoms used: 3, 1, 2, 0, 0
+Num coins used: 6
+ChangeSlow Time: 0.0165849999
+
+Problem 16
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 36
+
+Algorithm 1 Problem 16
+Denoms used: 0, 0, 0, 1, 1, 0, 0
+Num coins used: 2
+ChangeSlow Time: 20.3419208527
+
+Problem 17
+Coins: 1, 5, 10, 25, 50
+Change To Make: 36
+
+Algorithm 1 Problem 17
+Denoms used: 1, 0, 1, 1, 0
+Num coins used: 3
+ChangeSlow Time: 0.0534639992
+
+Problem 18
+Coins: 1, 6, 13, 37, 150
+Change To Make: 36
+
+Algorithm 1 Problem 18
+Denoms used: 0, 6, 0, 0, 0
+Num coins used: 6
+ChangeSlow Time: 0.0401909985
+
+Problem 19
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 37
+
+Algorithm 1 Problem 19
+Denoms used: 1, 0, 0, 1, 1, 0, 0
+Num coins used: 3
+ChangeSlow Time: 34.0764160156
+
+Problem 20
+Coins: 1, 5, 10, 25, 50
+Change To Make: 37
+
+Algorithm 1 Problem 20
+Denoms used: 2, 0, 1, 1, 0
+Num coins used: 4
+ChangeSlow Time: 0.0859159976
+
+Problem 21
+Coins: 1, 6, 13, 37, 150
+Change To Make: 37
+
+Algorithm 1 Problem 21
+Denoms used: 0, 0, 0, 1, 0
+Num coins used: 1
+ChangeSlow Time: 0.0000030000
+
+Problem 22
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 38
+
+Algorithm 1 Problem 22
+Denoms used: 0, 1, 0, 1, 1, 0, 0
+Num coins used: 3
+ChangeSlow Time: 56.3473243713
+
+Problem 23
+Coins: 1, 5, 10, 25, 50
+Change To Make: 38
+
+Algorithm 1 Problem 23
+Denoms used: 3, 0, 1, 1, 0
+Num coins used: 5
+ChangeSlow Time: 0.0892309994
+
+Problem 24
+Coins: 1, 6, 13, 37, 150
+Change To Make: 38
+
+Algorithm 1 Problem 24
+Denoms used: 1, 0, 0, 1, 0
+Num coins used: 2
+ChangeSlow Time: 0.0090269996
+
+Problem 25
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 39
+
+Algorithm 1 Problem 25
+Denoms used: 1, 1, 0, 1, 1, 0, 0
+Num coins used: 4
+ChangeSlow Time: 93.8616943359
+
+Problem 26
+Coins: 1, 5, 10, 25, 50
+Change To Make: 39
+
+Algorithm 1 Problem 26
+Denoms used: 4, 0, 1, 1, 0
+Num coins used: 6
+ChangeSlow Time: 0.1611959934
+
+Problem 27
+Coins: 1, 6, 13, 37, 150
+Change To Make: 39
+
+Algorithm 1 Problem 27
+Denoms used: 2, 0, 0, 1, 0
+Num coins used: 3
+ChangeSlow Time: 0.0239739995
+
+Problem 28
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 40
+
+Algorithm 1 Problem 28
+Denoms used: 0, 2, 0, 1, 1, 0, 0
+Num coins used: 4
+ChangeSlow Time: 156.4696655273
+
+Problem 29
+Coins: 1, 5, 10, 25, 50
+Change To Make: 40
+
+Algorithm 1 Problem 29
+Denoms used: 0, 1, 1, 1, 0
+Num coins used: 3
+ChangeSlow Time: 0.1767189950
+
+Problem 30
+Coins: 1, 6, 13, 37, 150
+Change To Make: 40
+
+Algorithm 1 Problem 30
+Denoms used: 3, 0, 0, 1, 0
+Num coins used: 4
+ChangeSlow Time: 0.0366379991
+

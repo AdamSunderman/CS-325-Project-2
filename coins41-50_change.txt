@@ -1,0 +1,113 @@
+Problem 1
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 41
+
+Algorithm 1 Problem 1
+Denoms used: 1, 2, 0, 1, 1, 0, 0
+Num coins used: 5
+ChangeSlow Time: 266.3065490723
+
+Problem 2
+Coins: 1, 5, 10, 25, 50
+Change To Make: 41
+
+Algorithm 1 Problem 2
+Denoms used: 1, 1, 1, 1, 0
+Num coins used: 4
+ChangeSlow Time: 0.2990840077
+
+Problem 3
+Coins: 1, 6, 13, 37, 150
+Change To Make: 41
+
+Algorithm 1 Problem 3
+Denoms used: 4, 0, 0, 1, 0
+Num coins used: 5
+ChangeSlow Time: 0.0816209987
+
+Problem 4
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 42
+
+Algorithm 1 Problem 4
+Denoms used: 0, 0, 1, 1, 1, 0, 0
+Num coins used: 3
+ChangeSlow Time: 440.4515991211
+
+Problem 5
+Coins: 1, 5, 10, 25, 50
+Change To Make: 42
+
+Algorithm 1 Problem 5
+Denoms used: 2, 1, 1, 1, 0
+Num coins used: 5
+ChangeSlow Time: 0.4473209977
+
+Problem 6
+Coins: 1, 6, 13, 37, 150
+Change To Make: 42
+
+Algorithm 1 Problem 6
+Denoms used: 5, 0, 0, 1, 0
+Num coins used: 6
+ChangeSlow Time: 0.1097349972
+
+Problem 7
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 43
+
+Algorithm 1 Problem 7
+Denoms used: 1, 0, 1, 1, 1, 0, 0
+Num coins used: 4
+ChangeSlow Time: 734.1744384766
+
+Problem 8
+Coins: 1, 5, 10, 25, 50
+Change To Make: 43
+
+Algorithm 1 Problem 8
+Denoms used: 3, 1, 1, 1, 0
+Num coins used: 6
+ChangeSlow Time: 0.5215240121
+
+Problem 9
+Coins: 1, 6, 13, 37, 150
+Change To Make: 43
+
+Algorithm 1 Problem 9
+Denoms used: 0, 1, 0, 1, 0
+Num coins used: 2
+ChangeSlow Time: 0.0972720012
+
+Problem 10
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 44
+
+Algorithm 1 Problem 10
+Denoms used: 0, 1, 1, 1, 1, 0, 0
+Num coins used: 4
+ChangeSlow Time: 1230.2933349609
+
+Problem 11
+Coins: 1, 5, 10, 25, 50
+Change To Make: 44
+
+Algorithm 1 Problem 11
+Denoms used: 4, 1, 1, 1, 0
+Num coins used: 7
+ChangeSlow Time: 0.7602000237
+
+Problem 12
+Coins: 1, 6, 13, 37, 150
+Change To Make: 44
+
+Algorithm 1 Problem 12
+Denoms used: 1, 1, 0, 1, 0
+Num coins used: 3
+ChangeSlow Time: 0.1305239946
+
+Problem 13
+Coins: 1, 2, 6, 12, 24, 48, 60
+Change To Make: 45
+
+Algorithm 1 Problem 13
