@@ -15,32 +15,19 @@ public:
 };
 
 
-
+ResultPair changedp(vector<int> V, int amount);
 void printVector(std::vector<int> vec, std::ofstream & outfile);
 int runAlgorithms(string fileName);
 ResultPair changeSlow(ResultPair coin_pair);
 
 int main(int argc, char * argv[]) {
 
-	string fileName = argv[1];
+	string fileName;
+
+	if (argv[1] != NULL)
+		fileName = argv[1];
 	//cout << "What file should I read?" << endl;
 	//cin >> fileName;
-	
-	int minCoins;
-	vector<int> d;
-
-	d.push_back(1);
-	d.push_back(5);
-	d.push_back(10);
-	d.push_back(25);
-
-	vector<int> result = changedp(d, 199, minCoins);
-
-	cout << minCoins << endl;
-
-	for (int i = 0; i < result.size(); i++)
-		cout << result[i] << " ";
-
 
 	int results = runAlgorithms(fileName);
 
@@ -75,7 +62,7 @@ int runAlgorithms(string fileName) {
 	ResultPair problem;
 
 	//Open the input file and verify it opened
-	const char* file = (fileName+".txt").c_str();
+	const char* file = (fileName + ".txt").c_str();
 	std::ifstream input;
 	input.open(file, std::ifstream::in);
 	if (input.fail()) {
@@ -85,7 +72,7 @@ int runAlgorithms(string fileName) {
 
 	//Open the output file
 	std::ofstream output;
-	output.open(fileName +"_change.txt");
+	output.open(fileName + "_change.txt");
 
 	//Variables for file parsing
 	string line;
@@ -165,16 +152,16 @@ int runAlgorithms(string fileName) {
 		**/
 
 		//**************************Algorithm 1 Run Area************************
-		
+
 		output << "Algorithm 1 Problem " << problemNumber << endl;
 		clock_t timeStart = clock();
 		ResultPair alg1Results = changeSlow(problem);
 		float alg1_elapsed = (float)(clock() - timeStart) / CLOCKS_PER_SEC;
 		output << "Denoms used: ";
 		printVector(alg1Results.array, output);
-		output << "Num coins used: " << alg1Results.sum << endl 
+		output << "Num coins used: " << alg1Results.sum << endl
 			<< "ChangeSlow Time: " << fixed << setprecision(10) << alg1_elapsed << endl << endl;
-		
+
 
 		//**************************Algorithm 1 Run Area************************
 
@@ -187,22 +174,22 @@ int runAlgorithms(string fileName) {
 		float alg2_elapsed = (float)(clock() - tStart) / CLOCKS_PER_SEC;
 		printVector(alg2Results.array, alg2Results.array.size(), output);
 		output << "MSS Sum: " << alg2Results.sum << endl
-			<< "MSS Time: " << fixed << setprecision(10) << alg2_elapsed << endl << endl;
+		<< "MSS Time: " << fixed << setprecision(10) << alg2_elapsed << endl << endl;
 		*/
 		//**************************Algorithm 2 Run Area************************
 
 
 		//**************************Algorithm 3 Run Area************************
-		/*
-		output << "Algorithm 1 Problem " << problemNumber << endl;
+
+		output << "Algorithm 3 Problem " << problemNumber << endl;
 		clock_t alg3_begin = clock();
-		ResultPair alg3Results = mssDivConq(problem);
+		ResultPair alg3Results = changedp(problem.array, problem.sum);
 		clock_t alg3_end = clock();
 		float alg3_elapsed = (float)(alg3_end - alg3_begin) / CLOCKS_PER_SEC;
-		printVector(alg3Results.array, alg3Results.array.size(), output);
+		printVector(alg3Results.array, output);
 		output << "MSS Sum: " << alg3Results.sum << endl
 			<< "MSS Time: " << fixed << setprecision(10) << alg3_elapsed << endl << endl;
-		*/
+
 		//**************************Algorithm 3 Run Area************************
 
 
@@ -215,7 +202,7 @@ int runAlgorithms(string fileName) {
 		float alg4_elapsed = (float)(alg4_end - alg4_begin) / CLOCKS_PER_SEC;
 		printVector(alg4Results.array, alg4Results.array.size(), output);
 		output << "MSS Sum: " << alg4Results.sum << endl
-			<< "MSS Time: " << fixed << setprecision(10) << alg4_elapsed << endl << endl;
+		<< "MSS Time: " << fixed << setprecision(10) << alg4_elapsed << endl << endl;
 		cout << fixed << setprecision(10) << alg4_elapsed << endl;
 		*/
 		//**************************Algorithm 4 (Linear) Run Area************************
@@ -233,32 +220,32 @@ int runAlgorithms(string fileName) {
 
 ResultPair changeSlow(ResultPair coin_pair){
 	ResultPair results;
-	ResultPair left; 
+	ResultPair left;
 	ResultPair right;
 	results.array = std::vector<int>(coin_pair.array.size(), 0);
 	results.sum = coin_pair.sum;
 
-	for(int j=0; j<coin_pair.array.size(); j++){
-		if(coin_pair.sum == coin_pair.array[j]){
+	for (int j = 0; j<coin_pair.array.size(); j++){
+		if (coin_pair.sum == coin_pair.array[j]){
 			results.array[j] = 1;
 			results.sum = 1;
 			return results;
 		}
 	}
-	for(int k=0; k<coin_pair.array.size(); k++){
-		if(coin_pair.array[k] <= coin_pair.sum){
+	for (int k = 0; k<coin_pair.array.size(); k++){
+		if (coin_pair.array[k] <= coin_pair.sum){
 			ResultPair l_temp;
 			ResultPair r_temp;
 			l_temp.array = coin_pair.array;
 			r_temp.array = coin_pair.array;
 			l_temp.sum = coin_pair.array[k];
-			r_temp.sum = coin_pair.sum - coin_pair.array[k]; 
+			r_temp.sum = coin_pair.sum - coin_pair.array[k];
 			left = changeSlow(l_temp);
 			right = changeSlow(r_temp);
 		}
-		if((left.sum + right.sum) < results.sum){
+		if ((left.sum + right.sum) < results.sum){
 			results.sum = (left.sum + right.sum);
-			for(int l=0; l<coin_pair.array.size(); l++) {
+			for (int l = 0; l<coin_pair.array.size(); l++) {
 				results.array[l] = (left.array[l] + right.array[l]);
 			}
 		}
@@ -266,7 +253,7 @@ ResultPair changeSlow(ResultPair coin_pair){
 	return results;
 }
 
-ResultPair changedp(vector<int> V, int amount, int & minCoins){
+ResultPair changedp(vector<int> V, int amount){
 
 	//T[p] Contains the minumum number of coins required for p cents
 	vector<int> T(amount + 1);
@@ -277,6 +264,7 @@ ResultPair changedp(vector<int> V, int amount, int & minCoins){
 	//Initialize T[0], as an amount of zero shoudl yield zero coin combos
 	T[0] = 0;
 
+	//Result storage
 	ResultPair R;
 
 	int min, coinIndex = 0;
@@ -310,7 +298,7 @@ ResultPair changedp(vector<int> V, int amount, int & minCoins){
 		R.array.push_back(L[i]);
 
 
-	result.sum = T[amount];
+	R.sum = T[amount];
 	return R;
 }
 
