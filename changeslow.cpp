@@ -187,8 +187,8 @@ int runAlgorithms(string fileName) {
 		clock_t alg3_end = clock();
 		float alg3_elapsed = (float)(alg3_end - alg3_begin) / CLOCKS_PER_SEC;
 		printVector(alg3Results.array, output);
-		output << "MSS Sum: " << alg3Results.sum << endl
-			<< "MSS Time: " << fixed << setprecision(10) << alg3_elapsed << endl << endl;
+		output << "Num coins used: " << alg3Results.sum << endl
+			<< "ChangeDP Time: " << fixed << setprecision(10) << alg3_elapsed << endl << endl;
 
 		//**************************Algorithm 3 Run Area************************
 
@@ -253,7 +253,7 @@ ResultPair changeSlow(ResultPair coin_pair){
 	return results;
 }
 
-ResultPair changedp(vector<int> V, int amount){
+ResultPair changedp(std::vector<int> V, int amount){
 
 	//T[p] Contains the minumum number of coins required for p cents
 	vector<int> T(amount + 1);
