@@ -26,6 +26,20 @@ int main(int argc, char * argv[]) {
 	//cout << "What file should I read?" << endl;
 	//cin >> fileName;
 	
+	int minCoins;
+	vector<int> d;
+
+	d.push_back(1);
+	d.push_back(5);
+	d.push_back(10);
+	d.push_back(25);
+
+	vector<int> result = changedp(d, 199, minCoins);
+
+	cout << minCoins << endl;
+
+	for (int i = 0; i < result.size(); i++)
+		cout << result[i] << " ";
 
 
 	int results = runAlgorithms(fileName);
@@ -252,7 +266,53 @@ ResultPair changeSlow(ResultPair coin_pair){
 	return results;
 }
 
+ResultPair changedp(vector<int> V, int amount, int & minCoins){
 
+	//T[p] Contains the minumum number of coins required for p cents
+	vector<int> T(amount + 1);
+
+	//L[p] Contains location of the first coin in an optimal solution for p cents
+	vector<int> L(amount + 1);
+
+	//Initialize T[0], as an amount of zero shoudl yield zero coin combos
+	T[0] = 0;
+
+	ResultPair R;
+
+	int min, coinIndex = 0;
+
+	//Iterate up to the change amount
+	for (int i = 1; i <= amount; i++){
+
+		min = INT_MAX;
+
+		//Minimize 1 + T[i-V[j]]
+		for (int j = 0; j < V.size(); j++){
+
+			//Only valid if the current denomination is less than
+			//the current change amount
+			if (V[j] <= i)
+
+				//Record start index of optimal solution + reassign min 
+			if (1 + T[i - V[j]] < min){
+				min = 1 + T[i - V[j]];
+				coinIndex = j;
+			}
+		}
+
+		T[i] = min;
+		L[i] = coinIndex;
+	}
+
+	//To generate the result vector, add the first element
+	//of increasingly smaller subproblems 
+	for (int i = amount; i > 0; i -= V[L[i]])
+		R.array.push_back(L[i]);
+
+
+	result.sum = T[amount];
+	return R;
+}
 
 
 
