@@ -1,5 +1,5 @@
 CoinChange:
-	g++ -o CoinChange coin_change.cpp
+	g++ -std=c++11 coin_change.cpp -o CoinChange 
 
 run: CoinChange
 	./ChangeSlow ${FILENAME}

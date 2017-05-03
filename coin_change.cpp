@@ -1,9 +1,12 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include <iomanip>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <time.h>
+#include <limits.h>
 
 using namespace std;
 
@@ -24,23 +27,17 @@ ResultPair changegreedy(std::vector<int> V, int A);
 int main(int argc, char * argv[]) {
 
 	string fileName;
-
 	if (argv[1] != NULL)
 		fileName = argv[1];
 	//cout << "What file should I read?" << endl;
 	//cin >> fileName;
-
 	int results = runAlgorithms(fileName);
-
-
 	if (results == 1) {
 		cout << "Bad file read attempt" << endl;
 	}
 
 	return 0;
 }
-
-
 
 //Print Vector Contents
 void printVector(std::vector<int> vec, std::ofstream & outfile) {
@@ -58,10 +55,8 @@ void printVector(std::vector<int> vec, std::ofstream & outfile) {
 
 //Function to read input file and run all algorithms and tests
 int runAlgorithms(string fileName) {
-
 	//The vector with the problem
 	ResultPair problem;
-
 	//Open the input file and verify it opened
 	const char* file = (fileName + ".txt").c_str();
 	std::ifstream input;
@@ -70,34 +65,30 @@ int runAlgorithms(string fileName) {
 		cout << "File does not exist, Exiting" << endl;
 		return 1;
 	}
-
 	//Open the output file
 	std::ofstream output;
-	output.open(fileName + "_change.txt");
-
+	string out = (fileName + "_change.txt");
+	output.open(out.c_str());
 	//Variables for file parsing
 	string line;
 	string delimiter = " ";
 	size_t pos = 0;
 	string token;
 	int problemNumber = 0;
-
 	//1. Get/Parse one problem store it in vector<int> problem.
 	//2. Run all four algorithms on the vector, time and print the results.
 	//3. Repeat for all lines in problem file.
 	while (!input.eof()) {
 
 		getline(input, line);
-
 		//Find the index of the delimiter, save the number and
 		//then remove the value from the line.
 		while ((pos = line.find(delimiter)) != std::string::npos) {
 			token = line.substr(0, pos);
 			//cout << token << endl;
-			problem.array.push_back(std::atoi(token.c_str()));
+			problem.array.push_back(std::stoi(token));
 			line.erase(0, pos + delimiter.length());
 		}
-
 		//Due to formatting sometimes the last number won't get read by the
 		//above while loop. This checks if there is still a number left in
 		//the line and parses it if needed.
@@ -109,21 +100,19 @@ int runAlgorithms(string fileName) {
 			pos = pos + 1;
 			token = line.substr(0, pos);
 			//cout << token << endl;
-			problem.array.push_back(std::atoi(token.c_str()));
+			problem.array.push_back(std::stoi(token));
 		}
 		problemNumber++;
 
 		getline(input, line);
-
 		//Find the index of the delimiter, save the number and
 		//then remove the value from the line.
 		while ((pos = line.find(delimiter)) != std::string::npos) {
 			token = line.substr(0, pos);
 			//cout << token << endl;
-			problem.sum = std::atoi(token.c_str());
+			problem.sum = std::stoi(token);
 			line.erase(0, pos + delimiter.length());
 		}
-
 		//Due to formatting sometimes the last number won't get read by the
 		//above while loop. This checks if there is still a number left in
 		//the line and parses it if needed.
@@ -135,7 +124,7 @@ int runAlgorithms(string fileName) {
 			pos = pos + 1;
 			token = line.substr(0, pos);
 			//cout << token << endl;
-			problem.sum = std::atoi(token.c_str());
+			problem.sum = std::stoi(token);
 		}
 
 		//Print the final vector/problem contents
