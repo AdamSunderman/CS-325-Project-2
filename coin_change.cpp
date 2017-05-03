@@ -167,7 +167,7 @@ int runAlgorithms(string fileName) {
 		float alg2_elapsed = (float)(clock() - tStart) / CLOCKS_PER_SEC;
 		printVector(alg2Results.array, output);
 		output << "Num coins used: " << alg2Results.sum << endl
-		<< "ChangeGreedy Time: " << fixed << setprecision(10) << alg2_elapsed << endl << endl;
+			<< "ChangeGreedy Time: " << fixed << setprecision(10) << alg2_elapsed << endl << endl;
 
 		output << "Algorithm 3 Problem " << problemNumber << endl;
 		clock_t alg3_begin = clock();
@@ -236,6 +236,7 @@ ResultPair changedp(std::vector<int> V, int amount){
 
 	//Result storage
 	ResultPair R;
+	R.array.resize(V.size());
 
 	int min, coinIndex = 0;
 
@@ -265,7 +266,7 @@ ResultPair changedp(std::vector<int> V, int amount){
 	//To generate the result vector, add the first element
 	//of increasingly smaller subproblems 
 	for (int i = amount; i > 0; i -= V[L[i]])
-		R.array.push_back(L[i]);
+		R.array[L[i]] += 1;
 
 
 	R.sum = T[amount];
