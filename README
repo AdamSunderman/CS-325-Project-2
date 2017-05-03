@@ -1,0 +1,18 @@
+This program builds with a standard "g++ -o exe file" call but there is an included makefile.
+
+
+There are a couple options.
+
+1) You can use "make run FILENAME={file_to_run}" to build and run the program called "CoinChange"
+   replacing {file_to_run} with the name of your coin file without extensions.
+
+   Ex.-"make run FILENAME=coins"     To build CoinChange then run coins.txt.
+
+
+2) You can just use default "make" to build the program "CoinChange". Then you can run it using 
+   "./CoinChange" and the name of the file without extensions.
+
+   Ex.-"make"
+      -"./CoinChange coins"          To build CoinChange then run coins.txt
+
+If there are any problems I can respond immediately if emailed at : sunderad@oregonstate.edu
