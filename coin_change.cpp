@@ -19,6 +19,7 @@ ResultPair changedp(vector<int> V, int amount);
 void printVector(std::vector<int> vec, std::ofstream & outfile);
 int runAlgorithms(string fileName);
 ResultPair changeSlow(ResultPair coin_pair);
+ResultPair changegreedy(std::vector<int> V, int A);
 
 int main(int argc, char * argv[]) {
 
@@ -151,8 +152,6 @@ int runAlgorithms(string fileName) {
 		as we go to a file or data structure. This should be a good skeleton to work from.
 		**/
 
-		//**************************Algorithm 1 Run Area************************
-
 		output << "Algorithm 1 Problem " << problemNumber << endl;
 		clock_t timeStart = clock();
 		ResultPair alg1Results = changeSlow(problem);
@@ -162,24 +161,13 @@ int runAlgorithms(string fileName) {
 		output << "Num coins used: " << alg1Results.sum << endl
 			<< "ChangeSlow Time: " << fixed << setprecision(10) << alg1_elapsed << endl << endl;
 
-
-		//**************************Algorithm 1 Run Area************************
-
-
-		//**************************Algorithm 2 Run Area************************
-		/*
 		output << "Algorithm 2 Problem " << problemNumber << endl;
 		clock_t tStart = clock();
-		ResultPair alg2Results = BetterEnum(problem, problemLength);
+		ResultPair alg2Results = changegreedy(problem.array, problem.sum);
 		float alg2_elapsed = (float)(clock() - tStart) / CLOCKS_PER_SEC;
-		printVector(alg2Results.array, alg2Results.array.size(), output);
-		output << "MSS Sum: " << alg2Results.sum << endl
-		<< "MSS Time: " << fixed << setprecision(10) << alg2_elapsed << endl << endl;
-		*/
-		//**************************Algorithm 2 Run Area************************
-
-
-		//**************************Algorithm 3 Run Area************************
+		printVector(alg2Results.array, output);
+		output << "Num coins used: " << alg2Results.sum << endl
+		<< "ChangeGreedy Time: " << fixed << setprecision(10) << alg2_elapsed << endl << endl;
 
 		output << "Algorithm 3 Problem " << problemNumber << endl;
 		clock_t alg3_begin = clock();
@@ -189,24 +177,6 @@ int runAlgorithms(string fileName) {
 		printVector(alg3Results.array, output);
 		output << "Num coins used: " << alg3Results.sum << endl
 			<< "ChangeDP Time: " << fixed << setprecision(10) << alg3_elapsed << endl << endl;
-
-		//**************************Algorithm 3 Run Area************************
-
-
-		//**************************Algorithm 4 (Linear) Run Area************************
-		/*
-		output << "Algorithm 4 Problem " << problemNumber << endl;
-		clock_t alg4_begin = clock();
-		ResultPair alg4Results = mssLinear(problem, problemLength);
-		clock_t alg4_end = clock();
-		float alg4_elapsed = (float)(alg4_end - alg4_begin) / CLOCKS_PER_SEC;
-		printVector(alg4Results.array, alg4Results.array.size(), output);
-		output << "MSS Sum: " << alg4Results.sum << endl
-		<< "MSS Time: " << fixed << setprecision(10) << alg4_elapsed << endl << endl;
-		cout << fixed << setprecision(10) << alg4_elapsed << endl;
-		*/
-		//**************************Algorithm 4 (Linear) Run Area************************
-
 
 		//clear the vector
 		problem.array.clear();
@@ -303,6 +273,29 @@ ResultPair changedp(std::vector<int> V, int amount){
 }
 
 
+ResultPair changegreedy(std::vector<int> V, int A)
+{
+	int length = V.size();
+	std::vector<int> C(length);
+	int used = 0;
+	for (int i = 0; i < length; i++)
+		C[i] = 0;
+	for (int i = length - 1; i >= 0; i--)
+	{
+		if (A >= V[i])
+		{
+			A -= V[i];
+			C[i] += 1;
+			used++;
+			i += 1;
+		}
+	}
+	ResultPair results;
+	results.array = C;
+	results.sum = used;
+
+	return results;
+}
 
 
 

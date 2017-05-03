@@ -1,11 +1,10 @@
-ChangeSlow:
-	g++ -o ChangeSlow changeslow.cpp
+CoinChange:
+	g++ -o CoinChange coin_change.cpp
 
-run: ChangeSlow
+run: CoinChange
 	./ChangeSlow ${FILENAME}
 
-default: ChangeSlow
-	./ChangeSlow ${FILENAME}
+default: CoinChange
 
 clean:
-	rm -f ChangeSlow
+	rm -f CoinChange
